@@ -24,7 +24,7 @@ export const deleteCard = (evt) => {
   evt.target.closest('.card').remove();
 }
 
-export const handleLike = (card) => {
-  const likeBtn = card.querySelector('.card__like-button');
+export const handleLike = (cardLike) => {
+  const likeBtn = cardLike.querySelector('.card__like-button');
   likeBtn.classList.toggle('card__like-button_is-active');
 }
