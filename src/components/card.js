@@ -15,7 +15,7 @@ export const createCard = (data, handleLike, openImage, deleteCard) => {
 
   cardImage.addEventListener('click', () => openImage(data));
   cardBtn.addEventListener('click', deleteCard);
-  cardLikeBtn.addEventListener('click', () => handleLike(card));
+  cardLikeBtn.addEventListener('click', () => handleLike(cardLikeBtn));
 
   return cardElement;
 }
@@ -24,7 +24,6 @@ export const deleteCard = (evt) => {
   evt.target.closest('.card').remove();
 }
 
-export const handleLike = (cardLike) => {
-  const likeBtn = cardLike.querySelector('.card__like-button');
-  likeBtn.classList.toggle('card__like-button_is-active');
-}
+export const handleLike = (cardLike) => {    
+  cardLike.classList.toggle('card__like-button_is-active'); 
+} 

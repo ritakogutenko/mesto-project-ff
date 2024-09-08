@@ -40,7 +40,7 @@ allPopups.forEach((out) => {
 })
 
 // функция редактирования профиля
-const handleFormSubmit = (evt) => {
+const handleProfileFormSubmit = (evt) => {
   evt.preventDefault();
   profileName.textContent = inputName.value;
   profileDesc.textContent = inputDesc.value;
@@ -88,5 +88,5 @@ cardBtn.addEventListener('click', () => {
 })
 
 // слушатели на обработку форм (профиля + создание карточки)
-profileForm.addEventListener('submit', handleFormSubmit);
+profileForm.addEventListener('submit', handleProfileFormSubmit);
 cardForm.addEventListener('submit', handleCardSubmit);
