@@ -66,6 +66,7 @@ Promise.all([getUser(), getCards()])
     profileAvatar.style.backgroundImage = `url('${user.avatar}')`;
     cards.forEach(card => cardList.append(createCard(card, user._id, addLikeCard, openImage, deleteCard)));
   })
+  .catch((err) => console.error(`Ошибка: ${err}`))
 
 // функция редактирования профиля
 const handleProfileFormSubmit = (evt) => {
@@ -86,7 +87,7 @@ const handleAvatarSubmit = (evt) => {
   avatarButton.textContent = 'Сохранение...'
   avatarEdit(avatarLink.value)
     .then((res) => {
-      profileAvatar.style.backgroundImage = `url('${res.avatar})`;
+      profileAvatar.style.backgroundImage = `url('${res.avatar}')`;
       closePopup(avatarPopup)
     })
     .catch((err) => console.error(`Ошибка: ${err}`))
